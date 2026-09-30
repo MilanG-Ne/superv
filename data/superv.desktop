@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=SuperV Clipboard
+GenericName=Clipboard History
+Comment=Clipboard history, emoji and symbols. Press Super+V
+Exec=superv show
+Icon=superv
+Terminal=false
+StartupNotify=false
+Categories=Utility;GTK;
+Keywords=clipboard;history;paste;copy;pin;emoji;kaomoji;symbols;win+v;
+Actions=settings;
+
+[Desktop Action settings]
+Name=Settings
+Exec=superv settings

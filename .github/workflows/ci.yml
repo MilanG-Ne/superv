@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04  # the base of Linux Lite 6.x
+    env:
+      NO_AT_BRIDGE: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends python3-gi gir1.2-gtk-3.0 xvfb xauth xclip
+
+      - name: Byte-compile
+        run: /usr/bin/python3 -m compileall -q superv bin tests tools
+
+      - name: Unit tests
+        run: /usr/bin/python3 -m unittest discover -s tests -v
+
+      - name: Smoke test on a virtual X server
+        run: xvfb-run -a /usr/bin/python3 tests/smoke_test.py
+
+      - name: Build .deb
+        run: packaging/build-deb.sh
+
+      - name: Check the package installs
+        run: |
+          sudo apt-get install -y ./dist/superv_*_all.deb
+          superv --version
+          test -f /etc/xdg/autostart/superv.desktop
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: superv-deb
+          path: dist/*.deb

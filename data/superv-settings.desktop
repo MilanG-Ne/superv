@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=SuperV Settings
+Comment=Settings for the Super+V clipboard history
+Exec=superv settings
+Icon=superv
+Terminal=false
+StartupNotify=false
+Categories=Settings;DesktopSettings;GTK;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+Keywords=clipboard;history;paste;emoji;

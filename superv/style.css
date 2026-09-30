@@ -1,0 +1,193 @@
+/* SuperV. Colours come from the active GTK theme, so the panel matches
+   Linux Lite's theme (light or dark) without any extra settings. */
+
+window.superv-popup {
+  background-color: @theme_bg_color;
+}
+
+/* With a compositor the window is transparent and the frame draws the
+   rounded Windows 11 style panel. */
+window.superv-popup.composited {
+  background-color: transparent;
+}
+
+.superv-frame {
+  background-color: @theme_bg_color;
+  padding: 6px 10px 8px 10px;
+}
+
+window.superv-popup.composited .superv-frame {
+  border-radius: 10px;
+  border: 1px solid alpha(@theme_fg_color, 0.16);
+}
+
+.superv-tabs button {
+  min-width: 38px;
+  min-height: 30px;
+  padding: 0 6px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+  background-image: none;
+  background-color: transparent;
+}
+
+.superv-tabs button:hover {
+  background-color: alpha(@theme_fg_color, 0.08);
+}
+
+.superv-tabs button:checked {
+  background-color: alpha(@theme_selected_bg_color, 0.18);
+  box-shadow: inset 0 -2px @theme_selected_bg_color;
+}
+
+.page-title {
+  font-weight: bold;
+  padding-left: 2px;
+}
+
+/* Clipboard cards */
+list.clip-list,
+.clip-list {
+  background-color: transparent;
+}
+
+.clip-list row,
+.clip-list row:hover,
+.clip-list row:selected,
+.clip-list row:selected:focus,
+.clip-list row:focus {
+  padding: 3px 2px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  outline-color: transparent;
+  color: @theme_fg_color;
+}
+
+/* Some themes (Materia) draw a dashed "more content" line; the cards make that clear already. */
+.superv-frame scrolledwindow undershoot.top,
+.superv-frame scrolledwindow undershoot.bottom,
+.superv-frame scrolledwindow overshoot.top,
+.superv-frame scrolledwindow overshoot.bottom {
+  background: none;
+  box-shadow: none;
+}
+
+.clip-card {
+  background-color: alpha(@theme_fg_color, 0.06);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 8px 4px 8px 10px;
+  min-height: 34px;
+}
+
+.clip-list row:hover .clip-card {
+  background-color: alpha(@theme_fg_color, 0.10);
+}
+
+.clip-list row:selected .clip-card {
+  border-color: @theme_selected_bg_color;
+}
+
+.clip-list row:selected label {
+  color: @theme_fg_color;
+}
+
+.clip-action {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 2px;
+  opacity: 0.55;
+}
+
+.clip-action:hover,
+.clip-action.pinned {
+  opacity: 1;
+}
+
+.clip-action.pinned image {
+  color: @theme_selected_bg_color;
+}
+
+.clip-meta {
+  font-size: smaller;
+  opacity: 0.7;
+}
+
+.empty-title {
+  font-weight: bold;
+  font-size: larger;
+}
+
+/* Emoji, kaomoji and symbols */
+.picker-grid {
+  padding: 2px 0;
+}
+
+.picker-grid flowboxchild {
+  padding: 0;
+  border-radius: 6px;
+}
+
+.picker-grid flowboxchild:hover,
+.picker-grid flowboxchild:focus {
+  background-color: alpha(@theme_fg_color, 0.10);
+}
+
+.picker-grid flowboxchild:focus {
+  box-shadow: inset 0 0 0 2px @theme_selected_bg_color;
+}
+
+.emoji-cell,
+.emoji-icon {
+  font-family: "Noto Color Emoji", "Segoe UI Emoji", "Apple Color Emoji", "Twemoji", "EmojiOne Color", "Symbola", sans-serif;
+}
+
+.emoji-icon {
+  font-size: 15px;
+}
+
+.emoji-cell {
+  font-size: 20px;
+  min-height: 38px;
+}
+
+.symbols-cell {
+  font-size: 17px;
+  min-height: 36px;
+}
+
+.kaomoji-cell {
+  min-height: 34px;
+  padding: 0 4px;
+}
+
+.category-bar button {
+  min-width: 30px;
+  min-height: 28px;
+  padding: 0 4px;
+  border: none;
+  box-shadow: none;
+  background-image: none;
+  background-color: transparent;
+}
+
+.category-bar button:hover {
+  background-color: alpha(@theme_fg_color, 0.08);
+}
+
+.category-bar button:checked {
+  box-shadow: inset 0 -2px @theme_selected_bg_color;
+}
+
+/* Settings */
+.settings-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.settings-heading {
+  font-weight: bold;
+}

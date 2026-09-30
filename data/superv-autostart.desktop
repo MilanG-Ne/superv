@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=SuperV clipboard history
+Comment=Clipboard history for Super+V
+Exec=superv daemon
+Icon=superv
+Terminal=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
